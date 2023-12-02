@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% load static %} {% block design %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %} {% block content %}
+
+<div
+  class="container row col-md-12 d-flex justify-content-center align-items-center m-auto"
+>
+  <div class="text col-md-6 p-lg-3 m-auto">
+    <h1 class="text-light">Our Speciality MOMO</h1>
+    <h2>Melt-in-the-mouth momos, a symphony of spices concealed.</h2>
+    <p>
+      Delicate parcels, whispers of joy in each bite revealed. A culinary
+      embrace, crafted by the hands that love meals.
+    </p>
+  </div>
+  <div class="img-box col-md-6 m-auto">
+    <img
+      class="img-fluid w-75"
+      src="{% static "images/momo.jpeg" %}"
+      alt=""
+    />
+  </div>
+</div>
+{%endblock%}

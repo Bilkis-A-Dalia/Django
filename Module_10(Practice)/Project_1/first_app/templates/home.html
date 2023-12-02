@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is home page</h1>
+    <h1> {{ name | join:" - " }}</h1>
+    <h1>{{ name | join:" // " }}</h1>
+    <h2>{{ date | date:" D d M Y " }}</h2>
+    <h3>{{ default | default:"nothing here" }}</h3>
+    <h4>{{ num | add:"20" }}</h4>
+    <h5>{{ cap | capfirst }}</h5>
+    <h6>{{ cut | cut:"is" }}</h6>
+    <h1>{{ myName | dictsort:"name" }}</h1>
+    <h2>{{esc | escape}}</h2>
+    <h3>{{ val | first }}</h3>
+    <h4>{{ val | last }}</h4>
+    <h5>{{ val | length }}</h5>
+    <h6>{{ me | linenumbers }}</h6>
+    <h1>{{ cut | lower }}</h1>
+    <h1>{{ cut | upper }}</h1>
+    <h1>{{ cut | title }}</h1>
+    <h2>{{ name| random }}</h2>
+    <h2>{{ name| slice:'1' }}</h2>
+    <h3>{{ time | time:"H\h i\m" }}</h3>
+    <h3>{{ date | timesince:time }} </h3>
+    <h3>{{ cut | truncatechars:7 }}</h3>
+    <h3>{{ cut | wordcount }}</h3>
+    <h4>{{ cut| truncatewords:3 }}</h4>
+    <h4>{{ cut | striptags }}</h4>
+    <h5>You have {{ num_messages }} message {{ num_messages | pluralize }}.</h5>
+    <h1>{{ cut | make_list }}</h1>
+
+    {% comment %} geeks which are not present in earthly{% endcomment %}
+    <h1>{{cut | addslashes }}</h1>
+    <h1>{{ cut | center:"15" }}</h1>
+    <h2>{{ value | divisibleby:"3" }}</h2>
+    {{ cut | escape }}
+    <h3>{{ cut| filesizeformat }}</h3>
+    <h3>{{ cut| slugify }}</h3>
+    {% comment %} <h3>{{ var | linenumbers }}</h3> {% endcomment %}
+    <h3>{{ var | unordered_list }}</h3>
+    
+
+
+</body>
+</html>

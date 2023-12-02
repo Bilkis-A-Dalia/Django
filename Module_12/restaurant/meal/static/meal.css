@@ -1,0 +1,10 @@
+
+body{
+    background-color: rgb(167, 104, 104);
+}
+.meal-box{
+    display: flex;
+    justify-content: center;
+    border: none;
+    align-items: center;
+}

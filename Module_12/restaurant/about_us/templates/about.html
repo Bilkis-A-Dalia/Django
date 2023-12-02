@@ -1,0 +1,34 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block design %} <link
+rel="stylesheet" href="{% static "css/about.css" %}"> 
+{% endblock %} 
+{% block content %}
+
+<div class="container row col-md-12 m-auto">
+  <div class="about_text col-md-6 col-sm-12 mt-5 p-lg-3">
+    <h1>About Us</h1>
+    <h3>Bilkis Akter Dalia</h3>
+    <p>Owner of Butterfly</p>
+    <p>
+      At Butterfly, our menu is a kaleidoscope of flavors, transforming your
+      dining experience into a captivating dance of taste and elegance. Step
+      into Butterfly, where each dish unfolds like the wings of a butterfly,
+      revealing a palette of delectable surprises that flutter on your taste
+      buds. In the heart of the city, Butterfly invites you to savor the
+      artistry of cuisine, where every meal is a graceful flight through a
+      garden of culinary delights.
+    </p>
+
+    <button class="btn btn-warning">Read More</button>
+  </div>
+  <div class="about_img col-md-6 col-sm-12 mt-5 p-lg-3">
+    <img
+      class="img-fluid w-100"
+      src="{% static 'images/restaurant.jpeg' %}"
+      alt=""
+    />
+  </div>
+</div>
+
+{% endblock %}
