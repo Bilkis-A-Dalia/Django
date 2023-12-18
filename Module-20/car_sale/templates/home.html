@@ -1,0 +1,81 @@
+{% extends "base.html" %} {%load static%}
+<div class="position-absolute top-50 start-50 translate-middle">
+  {% block content %}
+  <div class="d-flex flex-wrap align-items-center px-3 pt-4">
+    <div class="col-6 px-5">
+      <h1>Welcome to Our car sale</h1>
+      <p>
+        Selling a car is a meticulous process that involves thorough preparation
+        and strategic execution. The initial step entails cleaning and detailing
+        the car to present it in the best possible light. Simultaneously,
+        collecting and organizing all pertinent documentation, including the
+        title and maintenance records, is crucial. Setting an appropriate price
+        necessitates diligent market research, accounting for the car's
+        condition. Crafting compelling online listings with high-quality photos
+        and detailed descriptions is pivotal for attracting potential buyers.
+        Responsiveness is key during communication with interested parties,
+        promptly scheduling test drives for serious buyers. Negotiation skills
+        come into play, requiring flexibility while emphasizing the car's
+        selling points. Closing the deal involves agreeing on a secure payment
+        method and completing the necessary paperwork for the transfer of
+        ownership. Post-sale responsibilities include removing personal items,
+        notifying authorities of the sale, and ensuring a smooth transition for
+        the buyer. Legal considerations, such as providing a detailed bill of
+        sale and facilitating the proper transfer of the title, are imperative.
+        Throughout the process, prioritizing customer satisfaction by
+        encouraging feedback and addressing concerns contributes to a positive
+        selling experience. Seeking professional assistance, such as using a
+        dealer or broker, can be considered for those less familiar or
+        comfortable with the intricacies of the sale.
+      </p>
+    </div>
+    <div class="col-6 px-5">
+      <img class="img-fluid w-75" src="{% static 'header.png'%}" alt="Logo" />
+    </div>
+  </div>
+
+  <div class="mx-5 align-content-center">
+    <h5>All Brands</h5>
+    {%for brand in brands%}
+    <div class="form-check form-check-inline">
+      <a
+        href="{% url 'brand_wise_car' brand.slug %}"
+        class="btn btn-dark text-decoration-none text-light"
+        >{{brand.name}}</a
+      >
+    </div>
+
+    {%endfor%}
+    <div class="col-10 p-3">
+      <h4>{{data | length}} results found</h4>
+      <div class="d-flex flex-wrap pt-5">
+        {% for car in data %}
+        <div class="col-sm-3">
+          <div class="card m-2 shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body">
+              <img
+                src="{{car.image.url}}"
+                class="card-img-top"
+                alt="car_image"
+              />
+              <h5 class="card-title">
+                <a
+                  class="text-decoration-none text-dark"
+                  href="{% url 'detail_cars' car.id%}"
+                  >{{car.title}}</a
+                >
+              </h5>
+              <p class="card-text">{{car.description | truncatewords:10}}</p>
+              <p>Quantity: {{car.quantity}}</p>
+              <p>Price: {{car.price}}</p>
+              <p class="btn btn-dark text-light">Brand: {{car.brand}}</p>
+              <br />
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
