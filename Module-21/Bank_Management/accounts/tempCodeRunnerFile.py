@@ -1,0 +1,1 @@
+account_type = self.cleaned_data.get('account_type')
