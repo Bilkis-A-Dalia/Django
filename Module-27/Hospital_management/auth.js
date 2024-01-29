@@ -47,7 +47,7 @@ const getValue = (id) => {
   return value;
 };
 
-const handleLogin = (event) => { 
+const handleLogin = (event) => {
   event.preventDefault();
   const username = getValue("login-username");
   const password = getValue("login-password");
@@ -56,19 +56,17 @@ const handleLogin = (event) => {
     fetch("https://testing-8az5.onrender.com/patient/login/", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({username, password}),
+      body: JSON.stringify({ username, password }),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        localStorage.setItem("token",data.token)
-        localStorage.setItem("user_id", data.user_id)
+
         if (data.token && data.user_id) {
           localStorage.setItem("token", data.token);
           localStorage.setItem("user_id", data.user_id);
           window.location.href = "index.html";
         }
-  });
+      });
   }
 };
-
